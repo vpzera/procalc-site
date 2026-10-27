@@ -9,6 +9,34 @@ WA = 'https://wa.me/5581996324810?text='
 def wa(msg):
     return WA + urllib.parse.quote(msg)
 
+GTAG = '''<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11213439995"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11213439995');
+</script>
+
+<!-- Conversão: Clique no WhatsApp (conta qualquer clique em link wa.me / WhatsApp) -->
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (!link) return;
+    var sendTo = 'AW-11213439995/UaNFCL_RgawdEPuH_uIp';
+    if (link.target === '_blank') {
+      gtag('event', 'conversion', { 'send_to': sendTo });
+      return;
+    }
+    // Link que abre na mesma aba: espera o registro antes de sair da página
+    e.preventDefault();
+    var url = link.href, foi = false;
+    function ir() { if (!foi) { foi = true; window.location.href = url; } }
+    gtag('event', 'conversion', { 'send_to': sendTo, 'event_callback': ir });
+    setTimeout(ir, 800);
+  });
+</script>'''
+
 def page(title, desc, body, current):
     return f'''<!doctype html>
 <html lang="pt-BR">
@@ -19,6 +47,7 @@ def page(title, desc, body, current):
 <meta name="description" content="{desc}">
 {FONTS}
 <link rel="stylesheet" href="blog.css">
+{GTAG}
 </head>
 <body>
 {SYMBOL}

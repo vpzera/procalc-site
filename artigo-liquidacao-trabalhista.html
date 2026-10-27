@@ -7,6 +7,33 @@
 <meta name="description" content="Entenda o que é a liquidação de sentença trabalhista, quais documentos são usados, como funcionam correção e juros e o prazo para impugnar os cálculos.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="blog.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11213439995"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11213439995');
+</script>
+
+<!-- Conversão: Clique no WhatsApp (conta qualquer clique em link wa.me / WhatsApp) -->
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (!link) return;
+    var sendTo = 'AW-11213439995/UaNFCL_RgawdEPuH_uIp';
+    if (link.target === '_blank') {
+      gtag('event', 'conversion', { 'send_to': sendTo });
+      return;
+    }
+    // Link que abre na mesma aba: espera o registro antes de sair da página
+    e.preventDefault();
+    var url = link.href, foi = false;
+    function ir() { if (!foi) { foi = true; window.location.href = url; } }
+    gtag('event', 'conversion', { 'send_to': sendTo, 'event_callback': ir });
+    setTimeout(ir, 800);
+  });
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
