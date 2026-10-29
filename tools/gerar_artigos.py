@@ -4,7 +4,7 @@ D = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
 home = open(D + 'index.html').read()
 SYMBOL = re.search(r'<svg width="0".*?</svg>', home, re.S).group(0)
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">'
-WA = 'https://wa.me/5581996324810?text='
+WA = 'https://wa.me/5581991057242?text='
 
 def wa(msg):
     return WA + urllib.parse.quote(msg)
@@ -72,7 +72,35 @@ def page(title, desc, body, current):
 '''
 
 ARTS = [
- dict(slug='artigo-liquidacao-trabalhista', area='Trabalhista', svc='cálculo trabalhista',
+ dict(slug='artigo-impugnacao-calculos', area='Trabalhista', svc='impugnação de cálculos trabalhistas', date='29 de outubro de 2026',
+  title='Impugnação de cálculos trabalhistas: prazo, fundamentos e erros comuns',
+  desc='Como impugnar os cálculos de liquidação na Justiça do Trabalho: prazo de 8 dias do art. 879 da CLT, como indicar itens e valores e os erros que mais aparecem nas contas.',
+  summary='O prazo de 8 dias, o que a impugnação precisa conter e onde procurar erros.',
+  body='''
+<p class="lede">Na fase de liquidação, quem não confere a conta da outra parte ou do perito costuma pagar, ou deixar de receber, mais do que deveria. A impugnação é o momento de apontar os erros, e a lei exige que ela venha com números.</p>
+<h2>Quando impugnar</h2>
+<p>Elaborada a conta, o juiz abre às partes <strong>prazo comum de 8 dias</strong> para impugnação fundamentada, com a indicação dos itens e valores objeto da discordância, sob pena de preclusão (art. 879, § 2º, da CLT). Depois disso, a discussão só volta nos embargos à execução ou na impugnação à sentença de liquidação (art. 884 da CLT), e de forma bem mais limitada.</p>
+<h2>O que a impugnação precisa ter</h2>
+<ul>
+<li><strong>Itens e valores:</strong> não basta dizer que a conta está errada. É preciso indicar qual verba, qual período e qual diferença.</li>
+<li><strong>Fundamento:</strong> o ponto da sentença, do acórdão ou da lei que a conta deixou de seguir.</li>
+<li><strong>Cálculo próprio:</strong> uma conta alternativa, de preferência no PJe-Calc, mostrando o valor que a parte entende correto.</li>
+</ul>
+<p>Essa delimitação também importa mais adiante: o agravo de petição só é admitido se o recorrente delimitar as matérias e os valores impugnados (art. 897, § 1º, da CLT).</p>
+<h2>Erros que mais aparecem nas contas</h2>
+<ul>
+<li>Correção monetária e juros fora dos critérios fixados pelo STF nas ADCs 58 e 59, ou sem considerar as mudanças da Lei 14.905/2024.</li>
+<li>Horas extras com divisor, jornada ou adicional diferentes dos definidos na sentença.</li>
+<li>Reflexos deferidos que ficaram de fora, ou reflexos sobre reflexos que a decisão não concedeu.</li>
+<li>Base de cálculo errada, sem verbas habituais como comissões, gratificações e adicionais.</li>
+<li>Períodos que já estavam prescritos, ou afastamentos e férias não descontados.</li>
+<li>Contribuição previdenciária e imposto de renda calculados sobre verbas indenizatórias ou pelo regime errado.</li>
+</ul>
+<div class="box"><p><strong>Dica prática:</strong> peça o arquivo do PJe-Calc da outra parte ou do perito, não só o PDF do resumo. Com o arquivo, a conferência é muito mais rápida e os erros de parâmetro aparecem logo.</p></div>
+<h2>Como trabalhamos</h2>
+<p>Conferimos a conta item por item, refazemos o cálculo no PJe-Calc com os parâmetros da decisão e entregamos um <strong>parecer técnico</strong> explicando cada divergência, pronto para o advogado usar na petição. O parecer vai incluso no cálculo, sem custo adicional. Como o prazo é curto, avise logo que a vista for aberta.</p>
+'''),
+ dict(slug='artigo-liquidacao-trabalhista', area='Trabalhista', svc='cálculo trabalhista', date='25 de outubro de 2026',
   title='Liquidação de sentença trabalhista: como é feito o cálculo',
   desc='Entenda o que é a liquidação de sentença trabalhista, quais documentos são usados, como funcionam correção e juros e o prazo para impugnar os cálculos.',
   summary='O que entra na conta, quais documentos usar e o prazo para impugnar.',
@@ -101,7 +129,7 @@ ARTS = [
 <li>Somar juros sobre juros ou corrigir valores já atualizados.</li>
 </ul>
 '''),
- dict(slug='artigo-revisao-pasep', area='Revisional', svc='revisão do PASEP',
+ dict(slug='artigo-revisao-pasep', area='Revisional', svc='revisão do PASEP', date='25 de outubro de 2026',
   title='Revisão do PASEP: quem tem direito e quais documentos pedir',
   desc='Servidores com saldo no PASEP podem ter direito a diferenças por desfalques e falta de rendimentos. Veja o que o STJ decidiu no Tema 1.150 e como é feito o cálculo.',
   summary='O que o STJ decidiu no Tema 1.150 e como o saldo é recalculado.',
@@ -126,7 +154,7 @@ ARTS = [
 <p>O saldo é reconstituído ano a ano, desde o primeiro depósito, aplicando as conversões de moeda, a correção monetária e os rendimentos definidos para o fundo em cada exercício. O resultado é comparado com o que foi efetivamente pago no saque. A diferença, atualizada, é o valor a ser pedido na ação.</p>
 <div class="box"><p><strong>Antes de entrar com a ação:</strong> um cálculo extrajudicial mostra se a diferença compensa o processo e já serve de base para a petição inicial.</p></div>
 '''),
- dict(slug='artigo-conferir-rescisao', area='Extrajudicial', svc='conferência de rescisão (extrajudicial)',
+ dict(slug='artigo-conferir-rescisao', area='Extrajudicial', svc='conferência de rescisão (extrajudicial)', date='25 de outubro de 2026',
   title='Rescisão trabalhista: como conferir se você recebeu o valor certo',
   desc='Saiba quais verbas entram na rescisão, o prazo de pagamento e quando vale fazer um cálculo extrajudicial antes de entrar com uma ação trabalhista.',
   summary='Verbas, prazos e quando vale um cálculo antes de entrar com a ação.',
@@ -161,7 +189,7 @@ for a in ARTS:
 <a class="back" href="artigos.html">← Todos os artigos</a>
 <p class="area" style="margin-top:20px">{a['area']}</p>
 <h1>{a['title']}</h1>
-<p class="byline">Por Victor Pontes, contador CRC-PE 032.652 · 25 de outubro de 2026</p>
+<p class="byline">Por Victor Pontes, contador CRC-PE 032.652 · {a['date']}</p>
 {a['body']}
 <div class="cta">
 <h2>Precisa desse cálculo?</h2>
