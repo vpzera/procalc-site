@@ -4,7 +4,7 @@ D = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
 home = open(D + 'index.html').read()
 SYMBOL = re.search(r'<svg width="0".*?</svg>', home, re.S).group(0)
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">'
-WA = 'https://wa.me/5581991057242?text='
+WA = 'https://wa.me/5581996324810?text='
 
 def wa(msg):
     return WA + urllib.parse.quote(msg)
